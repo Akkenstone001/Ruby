@@ -1,0 +1,17 @@
+arr = %w[vasya lidia mark joseph jessie]
+while 2 + 2 = 4 
+name = arr
+
+x = 1
+arr.each do |name| 
+puts "#{x}. #{name}"
+x = x + 1 
+end 
+
+print "Who you want to kill: "
+n = get.to_i
+
+arr delete_at n - 1
+end 
+
+
