@@ -1,0 +1,40 @@
+class Album
+   attr_reader :name
+   attr_reader :songs 
+   
+
+   def initialize name
+   @name = name 
+   @songs = []
+   end 
+
+   def add_song song
+       songs << song 
+   end 
+end 
+
+class Song 
+   attr_reader :name, :duration
+
+   def initialize name, duration
+   @name = name
+   @duration = duration
+   end 
+
+end 
+
+album1 = Album.new('123')
+
+song1 = Song.new 'My song1', 6
+song2 = Song.new 'My song2', 5
+song3 = Song.new 'My song3', 4
+
+album1.add_song song1
+album1.add_song song2
+album1.add_song song3 
+
+puts album1.songs[1].name
+puts album1.songs[1].duration
+
+
+
