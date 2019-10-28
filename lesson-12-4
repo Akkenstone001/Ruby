@@ -1,0 +1,14 @@
+hh = {'cat' => ['koshka', 'kot'], 'dog' => ['sobaka', 'pes'], 'girl' => ['devushka', 'dev']}
+
+loop do
+print "Enter word to translation"
+word = gets.strip
+
+arr = hh[word]
+
+puts "Перевод слова:"
+puts arr 
+
+puts "Тип переменной: #{arr.class}"
+puts "Количество переводов: #{arr.size}"
+end 
