@@ -1,0 +1,37 @@
+# Task
+# 1 добавить переменную last_person (должна хранить имя последнего человека, который был добавлен в книгу);
+# 2 исправить add_person таким образом, чтобы в переменную last_person записывалось имя;
+# 3 создать метод, который возвращает last_person;
+# 4 добавить несколько имен в записную книжку;
+# 5 вывести в самом конце программы last_person 
+
+class Book
+      def initialize
+         @hh = {}
+      end
+      
+      def add_person options 
+      puts "ALready exists" if @hh[options[:name]]
+      @hh[options[:name]] = options[:age]
+
+      def show_all
+      @hh.keys.each do |key|
+         name = @hh[key]
+         puts "Name: #{key}, age: #{:age}"
+      end
+    end 
+    # 3 создать метод, который возвращает last_person
+    def aaa
+      @hh
+    end  
+end 
+
+b = Book.new
+
+# 4 добавить несколько имен в записную книжку
+b.add_person :name => 'Walt', :age => 36
+b.show_all 
+
+# 5 вывести в самом конце программы last_person
+puts b.aaa
+end 
