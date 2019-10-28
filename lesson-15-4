@@ -1,0 +1,89 @@
+class Country
+   attr_reader :name
+   attr_reader :airports
+
+   def initialize(name)
+   @name = name 
+   @airports = []
+   end 
+
+   def add_airport airport 
+   @airports << airport 
+   end 
+
+   def add_country country 
+   @countries << country 
+   end 
+end 
+
+class Airport
+   attr_reader :name
+   attr_reader :planes 
+
+   def initialize(name)
+   @name = name
+   @planes = []
+   end
+
+   def add_plane plane 
+   @planes << plane 
+   end 
+
+ 
+end
+
+class Plane 
+  attr_reader :model 
+
+  def initialize(model)
+  @model = model 
+  end 
+
+end 
+ 
+countries = []
+
+country1 = Country.new('Russia')
+
+countries << country1 
+
+
+airports = []
+
+airport1 = Airport.new('SVO')
+airport2 = Airport.new('DME')
+
+airports << airport1
+airports << airport2
+
+plane1 = Plane.new('TU-154')
+plane2 = Plane.new('SU-25')
+plane3 = Plane.new('SIR-34')
+
+airport1.add_plane plane1
+airport1.add_plane plane2 
+airport1.add_plane plane3
+
+plane_a = Plane.new('AA1')
+plane_b = Plane.new('BB2')
+plane_c = Plane.new('CC1') 
+
+airport2.add_plane plane_a
+airport2.add_plane plane_b
+airport2.add_plane plane_c 
+
+
+countries.each do |country|
+puts "Country: #{country.name}"
+
+airports.each do |airport|
+ puts "Airport: #{airport.name}"
+
+ airport.planes.each do |plane|
+ puts "Planes: #{plane.model}"
+ end 
+ end
+
+ end 
+ 
+ 
