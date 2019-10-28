@@ -1,0 +1,65 @@
+class Animal
+
+
+ def initialize name
+ @name = name
+ end 
+
+ def run
+ puts "#{@name} is running!"
+ end 
+
+ def jump
+ puts "#{@name} is jumping!"
+ end 
+
+end
+
+class Animal
+  
+  def say_meow
+  puts "Meoooooooow!"
+  end 
+  
+end 
+
+class Animal
+  
+  def say_gaf 
+  puts "Gaf-gaf!" 
+  end
+
+
+end 
+
+class Cat < Animal
+  
+  def initialize 
+     super 'cat'
+  end
+
+end 
+
+class Cat < Animal
+end 
+
+class Dog < Animal 
+
+  def initialize
+     super 'dog'
+  end 
+
+end 
+
+class Dod < Animal
+end 
+
+cat = Cat.new 
+cat.run
+cat.say_meow
+
+dog = Dog.new
+dog.jump 
+dog.say_gaf
+
+puts "Круто! Все получилось!"
