@@ -1,0 +1,22 @@
+module Humans
+   class Manager
+      def say_hi
+        puts "Hello!"
+      end 
+    
+    class Hipster 
+      def say_hi
+        puts "Hiiiiii"
+      end 
+    end 
+
+    class Jessie_Pinkman
+       def say_hi
+         puts "Hi, bitch!"
+      end
+    end 
+end 
+
+hipster = Humans::Hipster.new 
+Hipster.say_hi 
+end 
