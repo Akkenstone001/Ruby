@@ -1,0 +1,23 @@
+hh = {'cat' => ['kot', 'koshka'], 'dog' => ['sobaka', 'pes'], 'girl' => ['devushka', 'devochka']}
+
+while true 
+print "Введите слово: "
+word = gets.strip
+
+arr = hh[word]
+puts "Перевод слова: "
+puts arr
+puts "Количество переводов #{arr.size}"
+puts "Тип переменной: #{arr.class}"
+
+hh.each_key do |key|
+puts "Ключ #{key}"
+
+x = 0
+hh.each_value do |value|
+x = x + value.size
+puts x
+
+end 
+end 
+end 
