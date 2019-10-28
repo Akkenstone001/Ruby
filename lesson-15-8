@@ -1,0 +1,38 @@
+class Airplane
+
+    attr_reader :model    # модель - позволяют нам присвоить уровень доступа той или иной переменной
+    attr_reader :altitude # высота
+    attr_reader :speed    # высота
+
+    def initialize(model) # инициализация модели
+    @model = model #  присваиваем глобальную переменную
+    @altitude = 0 # присваиваем глобальную переменную 
+    @speed = 0  # присваиваем глобальную переменную 
+    end 
+
+    def fly  # определяем метод "летать"
+    @speed = 800
+    @altitude = 10000
+    end 
+
+    def land 
+    @speed = 0
+    @altitude = 0
+    end 
+
+    def moving?
+    return @speed > 0
+    end 
+end 
+
+plane1 = Airplane.new('Boeng-777')
+puts "Model: #{plane1.model}, Speed: #{plane1.speed}, Alt: #{plane1.altitude}"
+puts "Is moving? #{plane1.moving?}"
+
+plane1.fly
+puts "Model: #{plane1.model}, Speed: #{plane1.speed}, Alt: #{plane1.altitude}"
+puts "Is moving? #{plane1.moving?}"
+
+plane1.land
+puts "Model: #{plane1.model}, Speed: #{plane1.speed}, Alt: #{plane1.altitude}"
+puts "Is moving? #{plane1.moving?}"
