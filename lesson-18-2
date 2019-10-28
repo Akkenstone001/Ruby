@@ -1,0 +1,11 @@
+require "net/http"
+require "uri"
+
+
+def is_wrong_paasword? password
+   uri = URI.parse "https://xn--80aefokccmqcbce6ah5o0b.xn--p1ai/login"
+
+   response = Net::HTTP.post_form(uri, :login => "admin", :password => password).body
+   response.include? "denied"
+end 
+puts is_wrong_paasword? "123123"
