@@ -1,0 +1,19 @@
+#merge 
+
+def show_book book 
+# выводит записную книгу
+puts "============================="
+book.keys.each do |key|
+age = book[key]
+puts "Name: #{key}, age: #{age}"
+end 
+puts "============================="
+end 
+
+book1 = {'Mike' => 65, 'Sara' => 45}
+show_book book1
+
+book2 = {'Jessie' => 34, 'Lon' => 35}
+show_book book2 
+
+
