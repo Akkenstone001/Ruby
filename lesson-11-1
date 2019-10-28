@@ -1,28 +1,71 @@
 print "(R)ock, (S)cissors, (P)aper?"
-s = gets.strip.capitalize
+s = gets.strip.capitalize 
 
 if s == "R"
-  user_choice = :rock
-  elsif s == "S"
-  user_choice = :scissors 
-  elsif s == "P"
-  user_choice = :paper
-else
-  puts "Can't understand you want, sorry..."
-end 
+user_choice = :rock
+elsif s == "P"
+user_choice = :paper
+elsif s == "S"
+user_choice = :scissors 
+else 
+puts "Can't understand what you want, sorry..."
+end
+
+# выбор компьютера 
 
 arr = [:rock, :scissors, :paper]
 computer_choice = arr[rand(0..2)]
 
+# на данном этапе пользователь и компьютер уже определились с выбором 
+# вывод выбранных комбинаций пользователя и компьютера
+
 puts "User choice: #{user_choice}"
 puts "Computer choice: #{computer_choice}"
 
-if computer_choice == :rock && user_choice == :rock
-     puts "Draw"
-elsif computer_choice == :scissors && user_choice == :scissors 
-     puts "Draw"
-elsif computer_choice == :paper && user_choice == :paper 
-     puts "Draw"
-end 
+# определяем матрицу комбинаций: 
+# каждый элемент массива matrix будет еще одним массивом, в котором будут данные в следующем формате: 
+# 1-й выбор | 2-ой выбор | результат
 
+matrix = [
+  # ничья
+  
+  [:rock, :rock, :draw],
+  [:scissors, :scissors, :draw],
+  [:paper, :paper, :draw],
+
+  # комбинация для "камень"
+
+  [:rock, :scissors, :first_win],
+  [:rock, :paper, :second_win],
+
+  # комбинация для "ножницы"
+
+  [:scissors, :rock, :second_win],
+  [:scissors, :paper, :first_win],
+
+  # комбинация для "бумага"
+  
+  [:paper, :rock, :second_win],
+  [:paper, :scissors, :first_win]
+]
+# для каждого элемента в массиве matrix
+
+matrix.each do |item|
+
+# проверим, совпадает ли текущая комбинация массива с нашим выбором
+
+if item[0] == user_choice && item[1] == computer_choice 
+
+# совпадает 
+# теперь определяем кто выиграл: первый или второй 
+
+if item[2] == :first_win 
+puts "User wins!"
+elsif item[2] == :second_win 
+puts "Computer wins!"
+end 
+#  выход из программы 
+exit 
+end 
+end 
 
