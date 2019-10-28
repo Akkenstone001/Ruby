@@ -1,0 +1,18 @@
+# игра "Крестики - нолики" 
+
+puts "Welcome to play!"
+
+print "Press enter to play!"
+gets
+
+loop do 
+print "Ваш ход по оси: Х:"
+x = gets.to_i
+
+print "Ваш ход по оси: Y:"
+y = gets.to_i
+
+hh = {}
+
+
+end 
